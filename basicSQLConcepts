@@ -1,8 +1,26 @@
 <h2>Select</h2>
   <p>The SELECT command is used to extract field data from a table․</p>
   <h3>Example</h3>
-  <p>SELECT year</br>
-  FROM movies</p>
+    <p>SELECT year</br>
+    FROM movies</p>
+<h2>Order numerically</h2>
+  <p>Sorting consists of putting data in a meaningful order.</p>
+  <p>The ORDER BY command is used to sort the extracted data in the results table. Data is sorted by fields.</p>
+  <p>Your extracted data will be sorted in ascending order by default. If you need the data sorted in descending order (from largest to smallest) you need to add the DESC keyword.</p>
+  <p>By default, data is sorted in ascending order. You can use the explicit ASC keyword to clarify and make your queries more readable, particularly when writing complex queries.</p>
+  <h3>Example</h3>
+    <p>SELECT *<br>
+    FROM movies<br>
+    ORDER BY year</p>
+    <p>SELECT *<br>
+    FROM customers<br>
+    ORDER BY age DESC</p>
+<h2>Order alphabetically</h2>
+  <p>You can also sort data by a field that contains text. The default ascending order for text is alphabetical order.</p>
+  <h3>Example</h3>
+    <p>SELECT *<br>
+    FROM customers<br>
+    ORDER BY name DESC</p>
 
 
 
