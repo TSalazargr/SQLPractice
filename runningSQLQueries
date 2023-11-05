@@ -1,2 +1,48 @@
-<p>Data that can be stored in tables is called structured data. SQL makes working with structured data very fast and effective. A single data query can access thousands and thousands of records in the blink of an eye.</p>
-<
+<h1>Databases/h1>
+<h2>Intro</h2>
+  <p>Data lives in databases. Just about every company and organization relies on some form of database to store and organize information. SQL will allow you to interact with the data stored in a database. SQL code is used to send requests to a database. These requests are known as queries.</p>
+  <p>Most databases collect data in tables. Tables organize data in records and fields.</p>
+  <ul>
+    <li>Rows are records. A record (row) contains information about a subject such as a particular employee, a customer or a product like a movie.</li>
+      <ul>
+        <li>The header row is the top row of a table and includes the names for the different fields (columns).</li>
+    <li>Columns are fields. A field (column) contains information about the subjects such as name, email or product release year.</li>
+  </ul>
+  <img src="https://lecontent.sololearn.com/material-images/8a1aa66040d74383b466acd6a9da49f5-1.01.07.png" width="300">
+  <img src="https://lecontent.sololearn.com/material-images/2c0a1e9c97cf4bd99ab763d8247d4066-SQL1.01.09.png" width="300">  
+<h2>Select</h2>
+  <p>The SELECT command is used to extract field data from a table․</p>
+  <h3>Example</h3>
+    <table id="movies">
+      <tr>
+        <th>title</th><th>year</th>
+      </tr>
+      <tr>
+        <td>Home Alone</td><td>1990</td>
+      </tr>
+      <tr>
+        <td>Star Wars</td><td>1977</td>
+      </tr>
+      <tr>
+        <td>Jurassic Park</td><td>1993</td>  
+      </tr>
+    <table>
+  <p>SELECT year</br>
+FROM movies</p>
+  <p>Data that can be stored in tables is called structured data. SQL makes working with structured data very fast and effective. 
+    A single data query can access thousands and thousands of records in the blink of an eye.</p>
+  <p>A query allows you to access a subset of all the data in a database.</p>
+  <p>This results in a smaller table with the requested data.</p>
+  <p>Unstructured data is information that is difficult to store in tables. Ex: Audio data</p>
+  <p>You can select multiple fields from one table at once by separating them with commas.</p>
+  <p>SELECT year, title<br>
+    FROM movies</p>
+  <p><strong>SQL</strong> stands for <em>Structured Query Language</em>. With SQL you'll be able to extract data from massive datasets with thousands of fields and records.
+<h2>Relational databases</h2>
+  <p>The relational database is the most common type of database. A relational database can contain several tables. It handles structured data.</p>
+  <p>The different tables in a relational database connect to each other using fields (columns) with values in common. These fields are called <strong>keys</strong>.
+  <img src="https://lecontent.sololearn.com/material-images/a51f8d8a65184b379a2356e0d09ed0c4-sql13.png" width="300px">
+  <img src="https://lecontent.sololearn.com/material-images/4c829ee180564ae3bc116dd65b0be4ba-1.03.09.png" width="300px">
+
+
+
