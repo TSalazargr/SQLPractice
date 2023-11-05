@@ -1,0 +1,31 @@
+<h1>Databases/h1>
+<h2>Intro</h2>
+  <p>Data lives in databases. Just about every company and organization relies on some form of database to store and organize information. SQL will allow you to interact with the data stored in a database. SQL code is used to send requests to a database. These requests are known as queries.</p>
+  <p>Most databases collect data in tables. Tables organize data in records and fields.</p>
+  <ul>
+    <li>Rows are records. A record (row) contains information about a subject such as a particular employee, a customer or a product like a movie.</li>
+      <ul>
+        <li>The header row is the top row of a table and includes the names for the different fields (columns).</li>
+    <li>Columns are fields. A field (column) contains information about the subjects such as name, email or product release year.</li>
+  </ul>
+  <img src="https://lecontent.sololearn.com/material-images/8a1aa66040d74383b466acd6a9da49f5-1.01.07.png" width="300">
+  <img src="https://lecontent.sololearn.com/material-images/2c0a1e9c97cf4bd99ab763d8247d4066-SQL1.01.09.png" width="300">  
+<h2>Select</h2>
+  <p>The SELECT command is used to extract field data from a table․</p>
+  <h3>Example</h3>
+    <table id="movies">
+      <tr>
+        <th>title</th><th>year</th>
+      </tr>
+      <tr>
+        <td>Home Alone</td><td>1990</td>
+      </tr>
+      <tr>
+        <td>Star Wars</td><td>1977</td>
+      </tr>
+      <tr>
+        <td>Jurassic Park</td><td>1993</td>  
+      </tr>
+    <table>
+  <p>SELECT year</br>
+FROM movies</p>
