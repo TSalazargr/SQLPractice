@@ -44,6 +44,14 @@
       FROM movies<br>
       LIMIT 3 OFFSET 2</p>
 
+<h2>As</h2>
+
+You can give columns a temporary name (or alias) using the AS keyword
+  <h3>Example</h3>
+  <p>--Create a table with the name and price x delivery; name the new field 'multiplication'
+  SELECT name, price*delivery AS multiplication<br>
+  FROM sales</p>
+
 
 
  
