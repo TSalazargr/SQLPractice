@@ -1,0 +1,9 @@
+<p>Databases won’t understand your queries if your SQL code contains mistakes and they will return an error message. Errors in computer code are known as bugs and you’ll learn to identify and fix errors in this lesson.</p>
+<p>If your SQL query contains a mistake, you’ll not be able to access the data.</p>
+<h2>Schema</h2>
+<p>Knowing how data is organized in the database will help you reduce errors.<br>
+A schema is a visual representation of how a database is organized, showing its tables, fields and keys. Arrows are used to show how the different tables are related.<br>
+A schema shows the fields a table contains. It doesn't show data values.</p>
+<p>Line breaks are not needed for your queries to run without errors. Organizing your query into different lines makes the code easier to read by humans.</p>
+<img src="https://lecontent.sololearn.com/material-images/3a67187995c2406c95bedb5d4581ea50-1.04.05.png">
+<p>The <strong>*</strong> symbol allows you to select all the fields in a table. This way you can avoid typos when listing field names.</p>
