@@ -1,0 +1,23 @@
+To explain their SQL queries, data professionals use comments.
+
+Use double hyphens (--) to add a comment
+
+EXAMPLE:
+--extracts movie titles
+SELECT title
+FROM movies
+
+You can use comments to temporarily disable a query or part of a query when testing your code. This way the computer will skip the instruction.
+
+If you need to make comments with multiple lines, you can use  /* … */ block comments.
+
+EXAMPLE:
+
+/*This query selects the address 
+and phone number fields*/
+SELECT address, phone
+FROM customers
+
+SQL code is case-insensitive for command words like SELECT and FROM, but Data professionals use uppercase for the SQL command words and lowercase for tables and fields names. This makes the SQL code easier to read and consistent across projects.
+
+You already know that line breaks are ignored by computers. Same thing happens with extra whitespaces.
