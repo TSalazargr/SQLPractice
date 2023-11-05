@@ -21,7 +21,32 @@
     <p>SELECT *<br>
     FROM customers<br>
     ORDER BY name DESC</p>
+<h2>Limit</h2>
+  <p>Breaking large sets of data into smaller parts speeds up loading times and helps show people only what they need.</p>
+  <p>The LIMIT keyword extracts a limited number of records.</p>
+  <p>LIMIT can be used combined with ORDER BY. LIMIT is applied as the last operation. The results will be sorted first, then limited.</p>
+  <h3>Example</h3>
+    <p>--Extracts the first 10 records<br>
+      SELECT *<br>
+      FROM employees<br>
+      LIMIT 10</p>
 
+    <p>--Extracts the first 10 lowestrecords<br>
+      SELECT *<br>
+      FROM employees<br>
+      ORDER BY salary ASC<br>
+      LIMIT 10</p>
+<h2>Offset</h2>
+  <p>The OFFSET parameter is used with LIMIT to skip a number of records.</p>
+  <h3>Example</h3>
+    <p>--Skips 2 first records<br>
+      SELECT title<br>
+      FROM movies<br>
+      LIMIT 3 OFFSET 2</p>
+
+
+
+ 
 
 
 
