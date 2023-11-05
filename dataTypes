@@ -1,1 +1,22 @@
+A data table is filled with values. There are different types of values, such as numeric values and text values.
 
+Numberic values
+
+  Numeric values: you can do calculations with SQL with them<
+
+    SELECT name, price*delivery
+    FROM sales
+
+  You can give these new fields an alias with AS
+
+    SELECT name, price+delivery AS total
+    FROM sales
+
+Text Values
+
+    A piece of text data is technically called a STRING. An operation that you can do with strings is concatenation.
+
+    Concatenation joins strings together.
+
+      SELECT CONCAT(first_name, last_name) AS full_name
+      FROM employees
