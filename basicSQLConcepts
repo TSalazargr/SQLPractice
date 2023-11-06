@@ -71,7 +71,25 @@ WHERE year_funded > 2000</p>
 FROM studio<br>
 WHERE year_funded = 2000</p>
 
+<h2>Like</h2>
+
+<p>The LIKE keyword is used with the WHERE command to search for patterns in string values.</p>
+
+<h3>Example</h3>
+
+<p>SELECT *<br>
+FROM comics<br>
+WHERE title LIKE 'The Avengers%'</p>
+
 <p>A comparison operation always results in one of these two outcomes: Yes (True) or No (False)</p>
 
+<h2>Wildcard</h2>
+
+<p>The % symbol can replace any number of characters (one, multiple or none) in a string to create patterns. The % special symbol is known as a wildcard and is used to create patterns.</p> 
+<p>Patterns with the LIKE operator are case-sensitive in most database systems. This means that the pattern will treat uppercase and lowercase characters as different.</P>
+<p>When numbers are part of a string they can also be matched with patterns.</p>
+<h3>Example</h3>
+<p>You can use patterns to extract email addresses that share the same domain.</p>
+<p>%gmail.com' will extract any email that ends with 'gmail.com'</p>
 
 
