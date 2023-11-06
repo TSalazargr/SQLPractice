@@ -46,15 +46,32 @@
 
 <h2>As</h2>
 
-You can give columns a temporary name (or alias) using the AS keyword
+<p>You can give columns a temporary name (or alias) using the AS keyword</p>
   <h3>Example</h3>
   <p>--Create a table with the name and price x delivery; name the new field 'multiplication'
   SELECT name, price*delivery AS multiplication<br>
   FROM sales</p>
 
+<h2>Where and Comparison operations</h2>
 
+<p>WHERE is used to extract records that meet a condition.</p>
 
- 
+<h3>Example</h3>
+<p>SELECT *<br>
+FROM studio<br>
+WHERE name = 'Walt Disney'</p>
+
+<p>Strings (text values) have to be surrounded by single quotes (').</p>
+
+<p>SELECT *<br>
+FROM studio<br>
+WHERE year_funded > 2000</p>
+
+<p>SELECT *<br>
+FROM studio<br>
+WHERE year_funded = 2000</p>
+
+<p>A comparison operation always results in one of these two outcomes: Yes (True) or No (False)</p>
 
 
 
