@@ -83,13 +83,52 @@ WHERE title LIKE 'The Avengers%'</p>
 
 <p>A comparison operation always results in one of these two outcomes: Yes (True) or No (False)</p>
 
-<h2>Wildcard</h2>
+<h2>Multiple Queries</h2>
+<pYou can include multiple queries in your SQL code. You just need to separate them with a semicolon(;)</p>
 
+<h3>Example</h3>
+
+<p>/*Generates two tables: one with fields name and code extracted from products<br>
+and one with all the names of the records where the field code has the structure A_B_<br>
+SELECT name, code<br>
+FROM products;<br>
+<br>
+SELECT name<br>
+FROM products<br>
+WHERE code LIKE 'A_B_';</p>
+
+<h2>Wildcards</h2>
+
+<h3>%</h3>
 <p>The % symbol can replace any number of characters (one, multiple or none) in a string to create patterns. The % special symbol is known as a wildcard and is used to create patterns.</p> 
 <p>Patterns with the LIKE operator are case-sensitive in most database systems. This means that the pattern will treat uppercase and lowercase characters as different.</P>
 <p>When numbers are part of a string they can also be matched with patterns.</p>
-<h3>Example</h3>
+<h4>Example</h4>
 <p>You can use patterns to extract email addresses that share the same domain.</p>
 <p>%gmail.com' will extract any email that ends with 'gmail.com'</p>
 
+<h3>_</h3>
+
+<p>The underscore symbol _ is another wildcard and represents 1 single character only.</p>
+
+<h2>Lower and Uppercase</h2>
+
+<p>Patterns are case-sensitive. <br>
+
+LOWER() and UPPER() commands are used to convert strings to lower or uppercase.</p>
+
+<p>Use LOWER (or UPPER) with LIKE in the WHERE command line for case-insensitive pattern matching</p>
+
+<h3>Example</h3>
+
+<p>SELECT LOWER(title)<br>
+FROM movies;<br>
+SELECT UPPER(title)<br>
+FROM movies;</p>
+
+<p>/*Transform everything to lowercase for case-insensitive pattern matching<br>
+The lowercase transformation only affects the WHERE, the table itself would preserve the original format*/
+SELECT title<br>
+FROM books<br>
+WHERE LOWER(title) LIKE '%cooking%'</p>
 
