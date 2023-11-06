@@ -20,3 +20,7 @@ Text Values
 
       SELECT CONCAT(first_name, last_name) AS full_name
       FROM employees
+
+      -- Creates a table with a new field called 'name_year' which includes records formed by the name, a space, and the year
+      SELECT CONCAT( name, ' ', year_founded) AS name_year
+      FROM studio
