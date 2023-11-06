@@ -52,7 +52,7 @@
   SELECT name, price*delivery AS multiplication<br>
   FROM sales</p>
 
-<h2>Where and Comparison operations</h2>
+<h2>Where</h2>
 
 <p>WHERE is used to extract records that meet a condition.</p>
 
@@ -63,6 +63,21 @@ WHERE name = 'Walt Disney'</p>
 
 <p>Strings (text values) have to be surrounded by single quotes (').</p>
 
+<h2>Comparison operations</h2>
+<ul>
+  <li>Greater than '>'</li>
+  <li>Less than '<'</li>
+  <li>Equal to '='</li>
+  <li>Greater than or equal to '>='</li>
+  <li>Less than or equal to '<='</li>
+  <li>Not equal '<>'</li>
+    <ul>
+      <li>Can be used with both numbers and string values.</li>
+    </ul>
+</ul>
+
+
+
 <p>SELECT *<br>
 FROM studio<br>
 WHERE year_funded > 2000</p>
@@ -71,7 +86,18 @@ WHERE year_funded > 2000</p>
 FROM studio<br>
 WHERE year_funded = 2000</p>
 
-<h2>Like</h2>
+<p>/*The second field shows if the records meet <br>
+or don’t meet the condition<br>
+true (t) or false (f)*/<br>
+SELECT year, year > 2000 AS result<br>
+FROM movies;</p>
+
+<p>/*Filtering query that extracts<br>
+only the records that make<br>
+the condition true*/<br>
+SELECT title<br>
+FROM movies<br>
+WHERE year > 2000;</p>
 
 <p>The LIKE keyword is used with the WHERE command to search for patterns in string values.</p>
 
@@ -132,3 +158,4 @@ SELECT title<br>
 FROM books<br>
 WHERE LOWER(title) LIKE '%cooking%'</p>
 
+<h2>
