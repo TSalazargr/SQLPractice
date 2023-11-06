@@ -54,7 +54,8 @@
 
 <h2>Where</h2>
 
-<p>WHERE is used to extract records that meet a condition.</p>
+<p>WHERE is used to extract records that meet a condition.<br>
+When running queries that involve different operations, filtering happens first.</p>
 
 <h3>Example</h3>
 <p>SELECT *<br>
@@ -184,6 +185,10 @@ Extracts both the highest and lowest value in year field<br>
 SELECT MIN(year), MAX(year)
 FROM movies;</p>
 
+<p>SELECT MIN(year)<br>
+FROM movies<br>
+WHERE year > 2000</p>
+
 <h3>COUNT()</h3>
 <p>COUNT() is another aggregation operation. It counts the number of records.</p>
 
@@ -200,6 +205,9 @@ FROM movies;</p>
 <p>--Sums the prices of all products<br>
 SELECT SUM(price)<br>
 FROM products</p>
+
+<p>SELECT SUM(price+delivery) AS revenue<br>
+FROM sales;</p>
 
 <h3>AVG()</h3>
 <p>AVG() is another example of an aggregation operation. It calculates the average value</p>
