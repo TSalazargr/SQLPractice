@@ -158,4 +158,54 @@ SELECT title<br>
 FROM books<br>
 WHERE LOWER(title) LIKE '%cooking%'</p>
 
-<h2>
+<h2>Data aggregation</h2>
+<h3>MIN() and MAX()</h3>
+
+<p>Aggregation operates on multiple values to produce a a single numerical value. MIN() is an example of an aggregation operation.<br>
+MAX() is another example of an aggregation operation. </p>
+
+<h4>Example</h4>
+
+<p>/*<br>
+Extracts the highest value in the year field <br>
+*/<br>
+SELECT MAX(year)<br>
+FROM movies;</p>
+
+<p>/*<br>
+Extracts the lowest value in the year field <br>
+*/<br>
+SELECT MIN(year)<br>
+FROM movies;</p>
+
+<p>/*<br>
+Extracts both the highest and lowest value in year field<br>
+*/<br>
+SELECT MIN(year), MAX(year)
+FROM movies;</p>
+
+<h3>COUNT()</h3>
+<p>COUNT() is another aggregation operation. It counts the number of records.</p>
+
+<h4>Example</h4>
+<p>--Counts the number of records in a field<br>
+SELECT COUNT(year)<br>
+FROM movies;</p>
+
+<h3>SUM()</h3>
+<p>SUM() is another aggregation operation. It produces the total sum of the values in a numerical field.</p>
+
+<h4>Example</h4>
+
+<p>--Sums the prices of all products<br>
+SELECT SUM(price)<br>
+FROM products</p>
+
+<h3>AVG()</h3>
+<p>AVG() is another example of an aggregation operation. It calculates the average value</p>
+
+<h4>Example</h4>
+
+<p>--Gets the average of all prices<br>
+SELECT AVG(price)<br>
+FROM products</p>
