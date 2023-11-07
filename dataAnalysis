@@ -1,0 +1,21 @@
+Raw (or untreated) data needs to be processed and analyzed so it can be used to make decisions. This process involves different steps.
+
+In this lesson, you'll learn about the first steps in the data analysis process, starting with questions.
+
+Some questions can be answered with a filtering query.
+
+Example:
+
+  SELECT name
+  FROM students
+  WHERE grade = 100
+
+A lot of data lives on the Internet. Servers are computers that are always listening for requests of information.
+You can request information from a database server through an API (Application Programming Interface).
+
+There are APIs to request data from Facebook, Youtube, Wikipedia and pretty much every other platform.
+
+There is a vast ocean of information on the web. Web scraping allows you to extract information from websites. 
+
+Some knowledge of HTML and a programming language like Python will help you extract information you need from the internet.  
+
