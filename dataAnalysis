@@ -22,3 +22,22 @@ Some knowledge of HTML and a programming language like Python will help you extr
 Data grouping is a powerful tool when working with large datasets. 
 Grouping allows you to collect and see data in a new way, to answer more complex questions.
 
+GROUPING DATA
+
+GROUP BY allows you to organize similar data into categories. 
+It's combined with aggregations to compute key metrics for a group of records.
+
+  /*Groups records by genre and 
+  calculates the average budget for each group*/
+  SELECT genre, AVG(budget)
+  FROM movies
+  GROUP BY genre;
+
+At least one field is needed to group the data. 
+Remember you can use the AS keyword to give a name to the fields in the results table
+
+  SELECT genre, AVG(budget) AS avg_budget
+  FROM movies
+  GROUP BY genre;
+
+GROUP BY is most often combined with aggregation.
