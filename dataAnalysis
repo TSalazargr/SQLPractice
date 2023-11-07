@@ -41,3 +41,25 @@ Remember you can use the AS keyword to give a name to the fields in the results 
   GROUP BY genre;
 
 GROUP BY is most often combined with aggregation.
+
+GROUPING AND FILTERING
+
+In this lesson, you’ll learn to combine grouping and filtering in the same query! 
+This will let you make better decisions from your data.
+
+You can combine GROUP BY with WHERE filters. Data is filtered first, then grouped.
+
+  SELECT genre, AVG(budget)
+  FROM movies
+  WHERE budget > 50
+  GROUP BY genre;
+
+HAVING allows you to filter data that has been grouped.
+
+  SELECT genre, AVG(budget)
+  FROM movies
+  GROUP BY genre
+  HAVING AVG(budget) > 50;
+
+When a query contains both GROUP BY and HAVING, data is grouped first, then filtered.
+
