@@ -1,0 +1,13 @@
+The data type that stores one of two possible values (True or False) is called boolean.
+
+You can use booleans when filtering data.
+
+The result of a comparison operation is always a boolean. The boolean values are used to filter the data.
+
+Example:
+
+/*Creates a table with the movies that
+haven't won an Oscar*/
+SELECT  id, title, is_oscar_winner
+FROM movies
+WHERE is_oscar_winner = False;
