@@ -217,3 +217,47 @@ FROM sales;</p>
 <p>--Gets the average of all prices<br>
 SELECT AVG(price)<br>
 FROM products</p>
+
+<h2>Group By</h2>
+
+<p>GROUP BY allows you to organize similar data into categories. It's combined with aggregations to compute key metrics for a group of records.</p>
+<p>At least one field is needed to group the data. Remember you can use the AS keyword to give a name to the fields in the results table</p>
+<p>GROUP BY is most often combined with aggregation.</p>
+<p>You can combine GROUP BY with WHERE filters. Data is filtered first, then grouped.</p>
+
+
+<h3>Example</h3>
+
+<p>/*Groups records by genre and <br>
+  calculates the average budget for each group*/<br>
+  SELECT genre, AVG(budget)<br>
+  FROM movies<br>
+  GROUP BY genre;</p>
+
+  <p>--Creates a table with the average budget of each genre<br>
+  SELECT genre, AVG(budget) AS avg_budget<br>
+  FROM movies<br>
+  GROUP BY genre;</p>
+
+  <p>/*Creates a table with the average budget<br>
+  by genre for genres where the average budget<br>
+  is over 50*/<br>
+  SELECT genre, AVG(budget)<br>
+  FROM movies<br>
+  WHERE budget > 50<br>
+  GROUP BY genre;</p>
+
+<h2>Having</h2>
+
+<p>HAVING allows you to filter data that has been grouped.</p>
+<p>When a query contains both GROUP BY and HAVING, data is grouped first, then filtered.</p>
+
+<h3>Example</h3>
+
+<p>/*Creates a table with the average budget<br>
+  by genre where the average budget<br>
+  is over 50, grouping data before filtering*/<br>
+  SELECT genre, AVG(budget)<br>
+  FROM movies<br>
+  GROUP BY genre<br>
+  HAVING AVG(budget) > 50;</p>
