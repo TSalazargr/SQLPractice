@@ -10,20 +10,20 @@
   <li><a href="#orderBy">ORDER BY</a></li>
   <li><a href="#limit">LIMIT</a></li>
   <li><a href="#offset">OFFSET</a></li>
-  <li><a href="#as">As</a></li>
-  <li><a href="#where">Where</a></li>
-  <li><a href="#like">Like</a></li>
+  <li><a href="#as">AS</a></li>
+  <li><a href="#where">WHERE</a></li>
+  <li><a href="#like">LIKE</a></li>
   <li><a href="#wildcards">Wildcards</a></li>
-  <li><a href="#lowerUpper">Lower() and Upper()</a></li>
+  <li><a href="#lowerUpper">LOWER() and UPPER()</a></li>
   <li><a href="#dataAggregation">Data Aggregation</a></li>
     <ul>
-      <li><a href="#minMax">Min() and Max()</a></li>
-      <li><a href="#count">Count()</a></li>
-      <li><a href="#sum">Sum()</a></li>
-      <li><a href="#avg">Avg()</a></li>
+      <li><a href="#minMax">MIN() and MAX()</a></li>
+      <li><a href="#count">COUNT()</a></li>
+      <li><a href="#sum">SUM()</a></li>
+      <li><a href="#avg">AVG()</a></li>
     </ul>
-  <li><a href="#groupBy">Group By</a></li>
-  <li><a href="#having">Having</a></li>
+  <li><a href="#groupBy">GROUP BY</a></li>
+  <li><a href="#having">HAVING</a></li>
 </ul>
 </header>
 <main>
