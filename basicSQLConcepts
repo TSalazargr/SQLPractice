@@ -1,4 +1,9 @@
-<h1>Basic SQL Concepts</h1>
+<html>
+<title>Basic SQL Concepts</title>
+</html>
+<body>
+<header>
+<h1 id="top">Basic SQL Concepts</h1>
 
 <ul>
   <li><h2><a href="#select">SELECT</a></li>
@@ -20,7 +25,8 @@
   <li><a href="#groupBy">Group By</a></li>
   <li><a href="#having">Having</a></li>
 </ul>
-
+</header>
+<main>
 <h2 id="select">Select</h2>
   <p>The SELECT command is used to extract field data from a table․</p>
   <h3>Example</h3>
@@ -293,3 +299,9 @@ FROM products</p>
   FROM movies<br>
   GROUP BY genre<br>
   HAVING AVG(budget) > 50;</p>
+</main>
+<footer>
+<p><a href="#top">Go back to the top.</a></p>
+</footer>
+</body>
+</html>
