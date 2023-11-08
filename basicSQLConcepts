@@ -368,6 +368,7 @@ WHERE genre IS NOT NULL</p>
 <h2 id="and">AND</h2>
 
 <p>The AND operation results in a True value only when all the values are True at the same time.</p>
+<p>AND is a logical operator.</p>
 
 <h3>Example</h3>
 
@@ -375,9 +376,20 @@ WHERE genre IS NOT NULL</p>
 FROM books<br>
 WHERE qty >= 5 AND year > 1950</p>
 
+<p>/*<br>
+table name: orders<br>
+select name, surname of those who<br>
+- pre-booked a ticket<br>
+- selected a seat number<br>
+*/<br>
+SELECT CONCAT(name, surname) AS fullName<br>
+FROM orders<br>
+WHERE pre_book = 'True' AND seat_number IS NOT NULL</p>
+
 <h2 id="or">OR</h2>
 
 <p>The OR logical operation results in a True value if at least one of the conditions is True.</p>
+<p>AND is a logical operator.</p>
 
 <h3>Example</h3>
 
