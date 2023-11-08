@@ -6,24 +6,26 @@
 <h1 id="top">Basic SQL Concepts</h1>
 <nav>
 <ul>
-  <li><a href="#select">SELECT</a></li>
-  <li><a href="#orderBy">ORDER BY</a></li>
-  <li><a href="#limit">LIMIT</a></li>
-  <li><a href="#offset">OFFSET</a></li>
-  <li><a href="#as">AS</a></li>
-  <li><a href="#where">WHERE</a></li>
-  <li><a href="#like">LIKE</a></li>
-  <li><a href="#wildcards">Wildcards</a></li>
-  <li><a href="#lowerUpper">LOWER() and UPPER()</a></li>
-  <li><a href="#dataAggregation">Data Aggregation</a></li>
+  <li><a href="#select">SELECT</a>: Extract field data from a table.</li>
+  <li><a href="#orderBy">ORDER BY</a>: Sort the extracted data in the results table.</li>
+  <li><a href="#limit">LIMIT</a>: extracts x number of records.</li>
+  <li><a href="#offset">OFFSET</a>: is used with LIMIT to skip a number of records.</li>
+  <li><a href="#as">AS</a>: give columns a temporary name (or alias).</li>
+  <li><a href="#where">WHERE</a>: extract records that meet a condition. Filtering happens first.</li>
+  <li><a href="#like">LIKE</a>: used with the WHERE command to search for patterns in string values.</li>
+  <li><a href="#wildcards">Wildcards</a>: Replace other symbols with one character (_) or any number of character (%)</li>
+  <li><a href="#lowerUpper">LOWER() and UPPER()</a>: Convert strings to lower or uppercase.</li>
+  <li><a href="#dataAggregation">Data Aggregation</a>: Operates on multiple values to produce a a single numerical value.</li>
     <ul>
-      <li><a href="#minMax">MIN() and MAX()</a></li>
-      <li><a href="#count">COUNT()</a></li>
-      <li><a href="#sum">SUM()</a></li>
-      <li><a href="#avg">AVG()</a></li>
+      <li><a href="#minMax">MIN() and MAX()</a>: Extracts minimum or maximum number in a field.</li>
+      <li><a href="#count">COUNT()</a>: Counts the number of records.</li>
+      <li><a href="#sum">SUM()</a>: Produces the total sum of the values in a numerical field.</li>
+      <li><a href="#avg">AVG()</a>: Calculates the average value.</li>
     </ul>
-  <li><a href="#groupBy">GROUP BY</a></li>
-  <li><a href="#having">HAVING</a></li>
+  <li><a href="#groupBy">GROUP BY</a>: Organizes data with the same value in one of the fields into categories.</li>
+  <li><a href="#having">HAVING</a>: Specifies a condition for filtering values from a group.</li>
+  <li><a href="#distinct">DISTINCT</a>: Eliminates duplicate values.</li>
+  <li><a href="#isNullNotNull">IS NULL and NOT NULL</a>: Display records where the specified field is/is not null.</li>
 </ul>
 </nav>
 </header>
@@ -34,7 +36,7 @@
     <p>SELECT year</br>
     FROM movies</p>
 
-<h2 id="orderBy">Order numerically</h2>
+<h2 id="orderBy">Order By</h2>
   <p>Sorting consists of putting data in a meaningful order.</p>
   <p>The ORDER BY command is used to sort the extracted data in the results table. Data is sorted by fields.</p>
   <p>Your extracted data will be sorted in ascending order by default. If you need the data sorted in descending order (from largest to smallest) you need to add the DESC keyword.</p>
@@ -47,7 +49,6 @@
     FROM customers<br>
     ORDER BY age DESC</p>
 
-<h2>Order alphabetically</h2>
   <p>You can also sort data by a field that contains text. The default ascending order for text is alphabetical order.</p>
   <h3>Example</h3>
     <p>SELECT *<br>
@@ -197,10 +198,15 @@ FROM books<br>
 WHERE LOWER(title) LIKE '%cooking%'</p>
 
 <h2 id="dataAggregation">Data aggregation</h2>
+
+
+<p>Aggregation operates on multiple values to produce a a single numerical value.</p>
+
 <h3 id="minMax">MIN() and MAX()</h3>
 
-<p>Aggregation operates on multiple values to produce a a single numerical value. MIN() is an example of an aggregation operation.<br>
-MAX() is another example of an aggregation operation. </p>
+<p>MIN() is an example of an aggregation operation. MAX() is another example of an aggregation operation.</p>
+
+<p>They extract the minimum or maximum number in a field.</p>
 
 <h4>Example</h4>
 
@@ -247,7 +253,7 @@ FROM products</p>
 FROM sales;</p>
 
 <h3 id="avg">AVG()</h3>
-<p>AVG() is another example of an aggregation operation. It calculates the average value</p>
+<p>AVG() is another example of an aggregation operation. It calculates the average value.</p>
 
 <h4>Example</h4>
 
@@ -257,6 +263,7 @@ FROM products</p>
 
 <h2 id="groupBy">Group By</h2>
 
+<p>Organizes data with the same value in one of the fields into categories.</p>
 <p>GROUP BY allows you to organize similar data into categories. It's combined with aggregations to compute key metrics for a group of records.</p>
 <p>At least one field is needed to group the data. Remember you can use the AS keyword to give a name to the fields in the results table</p>
 <p>GROUP BY is most often combined with aggregation.</p>
@@ -299,6 +306,45 @@ FROM products</p>
   FROM movies<br>
   GROUP BY genre<br>
   HAVING AVG(budget) > 50;</p>
+
+  <p>/*Identifies duplicates in the data by seeing if<br>
+  any name appears more than once*/<br>
+  SELECT name COUNT(id)<br>
+  FROM employees<br>
+  GROUP BY name<br>
+  HAVING COUNT(name) > 1;</p><br>
+
+<h2 id="distinct">Distinct</h2>
+
+<p>Use DISTINCT to eliminate duplicate values.</p>
+
+<h3>Example</h3>
+
+<p>/* DISTINCT is used before <br>
+the field we want to extract.<br>
+In this case it will extract all<br>
+names that are unique.*/<br>
+SELECT DISTINCT name<br>
+FROM employees;</p>
+
+<h2 id="isNullNotNull">Null and Is Not Null</h2>
+
+<p>NULL is used to indicate that a data value is missing and does not exist in the database. NULL values are not shown in result tables.</p>
+
+<p>You can check if your data contains missing values. Use IS NULL in combination with WHERE to find missing values.</p>
+
+<p>Similarly, you can extract non-null values using IS NOT NULL. This will filter null values out.</p>
+
+<h3>Example</h3>
+
+<p>SELECT * <br>
+FROM movies <br>
+WHERE genre IS NULL</p>
+
+<p>SELECT * <br>
+FROM movies <br>
+WHERE genre IS NOT NULL</p>
+
 </main>
 <footer>
 <p><a href="#top">Go back to the top.</a></p>
