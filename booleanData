@@ -4,6 +4,12 @@ You can use booleans when filtering data.
 
 The result of a comparison operation is always a boolean. The boolean values are used to filter the data.
 
+Booleans help you write more complex and effective queries to answer questions about the data. 
+
+Operations involving boolean values are known as logical operations.
+
+A logical operation takes several boolean values to produce a boolean value.
+
 Example:
 
 /*Creates a table with the movies that
