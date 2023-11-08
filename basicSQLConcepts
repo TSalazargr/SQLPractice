@@ -6,7 +6,7 @@
 <h1 id="top">Basic SQL Concepts</h1>
 
 <ul>
-  <li><h2><a href="#select">SELECT</a></li>
+  <li><a href="#select">SELECT</a></li>
   <li><a href="#orderBy">ORDER BY</a></li>
   <li><a href="#limit">LIMIT</a></li>
   <li><a href="#offset">OFFSET</a></li>
