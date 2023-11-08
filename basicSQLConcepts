@@ -110,8 +110,7 @@ WHERE name = 'Walt Disney'</p>
     </ul>
 </ul>
 
-
-
+<h3>Example</h3>
 <p>SELECT *<br>
 FROM studio<br>
 WHERE year_funded > 2000</p>
