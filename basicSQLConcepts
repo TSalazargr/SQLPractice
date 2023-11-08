@@ -1,9 +1,33 @@
-<h2>Select</h2>
+<h1>Basic SQL Concepts</h1>
+
+<ul>
+  <li><h2><a href="#select">SELECT</a></li>
+  <li><a href="#orderBy">ORDER BY</a></li>
+  <li><a href="#limit">LIMIT</a></li>
+  <li><a href="#offset">OFFSET</a></li>
+  <li><a href="#as">As</a></li>
+  <li><a href="#where">Where</a></li>
+  <li><a href="#like">Like</a></li>
+  <li><a href="#wildcards">Wildcards</a></li>
+  <li><a href="#lowerUpper">Lower() and Upper()</a></li>
+  <li><a href="#dataAggregation">Data Aggregation</a></li>
+    <ul>
+      <li><a href="#minMax">Min() and Max()</a></li>
+      <li><a href="#count">Count()</a></li>
+      <li><a href="#sum">Sum()</a></li>
+      <li><a href="#avg">Avg()</a></li>
+    </ul>
+  <li><a href="#groupBy">Group By</a></li>
+  <li><a href="#having">Having</a></li>
+</ul>
+
+<h2 id="select">Select</h2>
   <p>The SELECT command is used to extract field data from a table․</p>
   <h3>Example</h3>
     <p>SELECT year</br>
     FROM movies</p>
-<h2>Order numerically</h2>
+
+<h2 id="orderBy">Order numerically</h2>
   <p>Sorting consists of putting data in a meaningful order.</p>
   <p>The ORDER BY command is used to sort the extracted data in the results table. Data is sorted by fields.</p>
   <p>Your extracted data will be sorted in ascending order by default. If you need the data sorted in descending order (from largest to smallest) you need to add the DESC keyword.</p>
@@ -15,13 +39,15 @@
     <p>SELECT *<br>
     FROM customers<br>
     ORDER BY age DESC</p>
+
 <h2>Order alphabetically</h2>
   <p>You can also sort data by a field that contains text. The default ascending order for text is alphabetical order.</p>
   <h3>Example</h3>
     <p>SELECT *<br>
     FROM customers<br>
     ORDER BY name DESC</p>
-<h2>Limit</h2>
+
+<h2 id="limit">Limit</h2>
   <p>Breaking large sets of data into smaller parts speeds up loading times and helps show people only what they need.</p>
   <p>The LIMIT keyword extracts a limited number of records.</p>
   <p>LIMIT can be used combined with ORDER BY. LIMIT is applied as the last operation. The results will be sorted first, then limited.</p>
@@ -36,7 +62,8 @@
       FROM employees<br>
       ORDER BY salary ASC<br>
       LIMIT 10</p>
-<h2>Offset</h2>
+
+<h2 id="offset">Offset</h2>
   <p>The OFFSET parameter is used with LIMIT to skip a number of records.</p>
   <h3>Example</h3>
     <p>--Skips 2 first records<br>
@@ -44,7 +71,7 @@
       FROM movies<br>
       LIMIT 3 OFFSET 2</p>
 
-<h2>As</h2>
+<h2 id="as">As</h2>
 
 <p>You can give columns a temporary name (or alias) using the AS keyword</p>
   <h3>Example</h3>
@@ -52,7 +79,7 @@
   SELECT name, price*delivery AS multiplication<br>
   FROM sales</p>
 
-<h2>Where</h2>
+<h2 id="where">Where</h2>
 
 <p>WHERE is used to extract records that meet a condition.<br>
 When running queries that involve different operations, filtering happens first.</p>
@@ -100,6 +127,8 @@ SELECT title<br>
 FROM movies<br>
 WHERE year > 2000;</p>
 
+<h2 id="like">Like</h2>
+
 <p>The LIKE keyword is used with the WHERE command to search for patterns in string values.</p>
 
 <h3>Example</h3>
@@ -124,7 +153,7 @@ SELECT name<br>
 FROM products<br>
 WHERE code LIKE 'A_B_';</p>
 
-<h2>Wildcards</h2>
+<h2 id="wildcards">Wildcards</h2>
 
 <h3>%</h3>
 <p>The % symbol can replace any number of characters (one, multiple or none) in a string to create patterns. The % special symbol is known as a wildcard and is used to create patterns.</p> 
@@ -142,7 +171,9 @@ WHERE code LIKE 'A_B_';</p>
 
 <p>Patterns are case-sensitive. <br>
 
-LOWER() and UPPER() commands are used to convert strings to lower or uppercase.</p>
+<h2 id="lowerUpper">Lower() and Upper()</h2>
+
+<p>LOWER() and UPPER() commands are used to convert strings to lower or uppercase.</p>
 
 <p>Use LOWER (or UPPER) with LIKE in the WHERE command line for case-insensitive pattern matching</p>
 
@@ -159,8 +190,8 @@ SELECT title<br>
 FROM books<br>
 WHERE LOWER(title) LIKE '%cooking%'</p>
 
-<h2>Data aggregation</h2>
-<h3>MIN() and MAX()</h3>
+<h2 id="dataAggregation">Data aggregation</h2>
+<h3 id="minMax">MIN() and MAX()</h3>
 
 <p>Aggregation operates on multiple values to produce a a single numerical value. MIN() is an example of an aggregation operation.<br>
 MAX() is another example of an aggregation operation. </p>
@@ -189,7 +220,7 @@ FROM movies;</p>
 FROM movies<br>
 WHERE year > 2000</p>
 
-<h3>COUNT()</h3>
+<h3 id="count">COUNT()</h3>
 <p>COUNT() is another aggregation operation. It counts the number of records.</p>
 
 <h4>Example</h4>
@@ -197,7 +228,7 @@ WHERE year > 2000</p>
 SELECT COUNT(year)<br>
 FROM movies;</p>
 
-<h3>SUM()</h3>
+<h3 id="sum">SUM()</h3>
 <p>SUM() is another aggregation operation. It produces the total sum of the values in a numerical field.</p>
 
 <h4>Example</h4>
@@ -209,7 +240,7 @@ FROM products</p>
 <p>SELECT SUM(price+delivery) AS revenue<br>
 FROM sales;</p>
 
-<h3>AVG()</h3>
+<h3 id="avg">AVG()</h3>
 <p>AVG() is another example of an aggregation operation. It calculates the average value</p>
 
 <h4>Example</h4>
@@ -218,7 +249,7 @@ FROM sales;</p>
 SELECT AVG(price)<br>
 FROM products</p>
 
-<h2>Group By</h2>
+<h2 id="groupBy">Group By</h2>
 
 <p>GROUP BY allows you to organize similar data into categories. It's combined with aggregations to compute key metrics for a group of records.</p>
 <p>At least one field is needed to group the data. Remember you can use the AS keyword to give a name to the fields in the results table</p>
@@ -247,10 +278,11 @@ FROM products</p>
   WHERE budget > 50<br>
   GROUP BY genre;</p>
 
-<h2>Having</h2>
+<h2 id="having">Having</h2>
 
 <p>HAVING allows you to filter data that has been grouped.</p>
 <p>When a query contains both GROUP BY and HAVING, data is grouped first, then filtered.</p>
+<p>The main difference between them is that the WHERE clause is used to specify a condition for filtering records before any groupings are made, while the HAVING clause is used to specify a condition for filtering values from a group.</p>
 
 <h3>Example</h3>
 
