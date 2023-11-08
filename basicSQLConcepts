@@ -6,26 +6,29 @@
 <h1 id="top">Basic SQL Concepts</h1>
 <nav>
 <ul>
-  <li><a href="#select">SELECT</a>: Extract field data from a table.</li>
-  <li><a href="#orderBy">ORDER BY</a>: Sort the extracted data in the results table.</li>
+  <li><a href="#select">SELECT</a>: extract field data from a table.</li>
+  <li><a href="#orderBy">ORDER BY</a>: sort the extracted data in the results table.</li>
   <li><a href="#limit">LIMIT</a>: extracts x number of records.</li>
   <li><a href="#offset">OFFSET</a>: is used with LIMIT to skip a number of records.</li>
   <li><a href="#as">AS</a>: give columns a temporary name (or alias).</li>
+  <li><a href="#concat">CONCAT</a>: joins strings together.</li>
   <li><a href="#where">WHERE</a>: extract records that meet a condition. Filtering happens first.</li>
   <li><a href="#like">LIKE</a>: used with the WHERE command to search for patterns in string values.</li>
-  <li><a href="#wildcards">Wildcards</a>: Replace other symbols with one character (_) or any number of character (%)</li>
-  <li><a href="#lowerUpper">LOWER() and UPPER()</a>: Convert strings to lower or uppercase.</li>
-  <li><a href="#dataAggregation">Data Aggregation</a>: Operates on multiple values to produce a a single numerical value.</li>
+  <li><a href="#wildcards">Wildcards</a>: replace other symbols with one character (_) or any number of character (%)</li>
+  <li><a href="#lowerUpper">LOWER() and UPPER()</a>: convert strings to lower or uppercase.</li>
+  <li><a href="#dataAggregation">Data Aggregation</a>: operates on multiple values to produce a a single numerical value.</li>
     <ul>
-      <li><a href="#minMax">MIN() and MAX()</a>: Extracts minimum or maximum number in a field.</li>
-      <li><a href="#count">COUNT()</a>: Counts the number of records.</li>
-      <li><a href="#sum">SUM()</a>: Produces the total sum of the values in a numerical field.</li>
-      <li><a href="#avg">AVG()</a>: Calculates the average value.</li>
+      <li><a href="#minMax">MIN() and MAX()</a>: extracts minimum or maximum number in a field.</li>
+      <li><a href="#count">COUNT()</a>: counts the number of records.</li>
+      <li><a href="#sum">SUM()</a>: produces the total sum of the values in a numerical field.</li>
+      <li><a href="#avg">AVG()</a>: calculates the average value.</li>
     </ul>
-  <li><a href="#groupBy">GROUP BY</a>: Organizes data with the same value in one of the fields into categories.</li>
-  <li><a href="#having">HAVING</a>: Specifies a condition for filtering values from a group.</li>
-  <li><a href="#distinct">DISTINCT</a>: Eliminates duplicate values.</li>
-  <li><a href="#isNullNotNull">IS NULL and NOT NULL</a>: Display records where the specified field is/is not null.</li>
+  <li><a href="#groupBy">GROUP BY</a>: organizes data with the same value in one of the fields into categories.</li>
+  <li><a href="#having">HAVING</a>: specifies a condition for filtering values from a group.</li>
+  <li><a href="#distinct">DISTINCT</a>: eliminates duplicate values.</li>
+  <li><a href="#isNullNotNull">IS NULL and NOT NULL</a>: display records where the specified field is/is not null.</li>
+  <li><a href="#and">AND</a>: retrieves values where two ore more conditions are TRUE .</li>
+  <li><a href="#or">OR</a>: retrieves values where at least one condition of the ones listed is TRUE.</li>
 </ul>
 </nav>
 </header>
@@ -86,6 +89,23 @@
   <p>--Create a table with the name and price x delivery; name the new field 'multiplication'
   SELECT name, price*delivery AS multiplication<br>
   FROM sales</p>
+
+<h2 id="concat">CONCAT()</h2>
+
+<p>A piece of text data is technically called a STRING. An operation that you can do with strings is concatenation.</p>
+
+<p>Concatenation joins strings together.</p>
+
+<h3>Example</h3>
+
+<p>SELECT CONCAT(first_name, last_name) AS full_name<br>
+FROM employees</p>
+
+<p>/* Creates a table with a new field called 'name_year'<br>
+which includes records formed <br>
+by the name, a space, and the year*/<br>
+SELECT CONCAT( name, ' ', year_founded) AS name_year<br>
+FROM studio</p>
 
 <h2 id="where">Where</h2>
 
@@ -344,6 +364,26 @@ WHERE genre IS NULL</p>
 <p>SELECT * <br>
 FROM movies <br>
 WHERE genre IS NOT NULL</p>
+
+<h2 id="and">AND</h2>
+
+<p>The AND operation results in a True value only when all the values are True at the same time.</p>
+
+<h3>Example</h3>
+
+<p>SELECT title<br>
+FROM books<br>
+WHERE qty >= 5 AND year > 1950</p>
+
+<h2 id="or">OR</h2>
+
+<p>The OR logical operation results in a True value if at least one of the conditions is True.</p>
+
+<h3>Example</h3>
+
+<p>SELECT title<br>
+FROM books<br>
+WHERE genre ='Fantasy' OR year = 1997</p>
 
 </main>
 <footer>
